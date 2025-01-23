@@ -1,0 +1,16 @@
+services:
+  postgres:
+    container_name: fast-feet-postgres
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: daniel
+      POSTGRES_PASSWORD: daniel
+      POSTGRES_DB: fast-feet
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - pg_data:/var/lib/postgresql/data/pgdata
+
+volumes:
+  pg_data:
